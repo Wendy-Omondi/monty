@@ -49,6 +49,25 @@ temp = temp->next;
 }
 
 /**
+ *free_it - frees
+ *@stack: pointer to head (top of stack)
+ *Return: void
+ */
+void free_it(stack_t *stack)
+{
+stack_t *temp;
+
+if (stack == NULL)
+return (0);
+
+while (stack != NULL)
+{
+temp = stack;
+stack = stack->next;
+free(stack);
+}
+}
+/**
  *pint - prints value at the top of the line
  *@stack: double pointer to head (top of stack)
  *@line_number: value of new node
