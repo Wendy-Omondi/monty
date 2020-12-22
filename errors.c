@@ -36,7 +36,18 @@ exit(EXIT_FAILURE);
 }
 
 /**
- *malloc_it - error when can't malloc anymore
+ *notint - check if not integer
+ *@line: line being checked
+ *Return: void
+ */
+void notint(unsigned int line)
+{
+fprintf(stderr, "L%u: not integer\n", line);
+exit(EXIT_FAILURE);
+}
+
+/**
+*malloc_it - error when can't malloc anymore
 *Return: Void
 */
 void malloc_it(void)
