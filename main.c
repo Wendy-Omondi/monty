@@ -11,6 +11,6 @@ int main(int argc, char **argv)
 if (argc != 2)
 arguments();
 
-open(argv);
+orx(argv);
 return (0);
 }
