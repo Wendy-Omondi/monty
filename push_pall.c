@@ -90,8 +90,8 @@ free(*stack);
 }
 
 /**
- *swap - swaps the top two elements of a stack
- *@stack - double pointer to head (top of stack)
+ *swap_it - swaps the top two elements of a stack
+ *@stack: double pointer to head (top of stack)
  *@line_number: value of new node
  *Return: Void
  */
