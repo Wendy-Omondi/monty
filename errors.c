@@ -15,7 +15,7 @@ exit(EXIT_FAILURE);
  *@argv: file name argument
  *Return: Void
  */
-void open(char **argv)
+void open_it(char **argv)
 {
 char *fn = argv[1];
 
