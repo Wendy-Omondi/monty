@@ -6,6 +6,11 @@
 #include <string.h>
 #include <string.h>
 #include <ctype.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/stat.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -36,15 +41,30 @@ char *opcode;
 void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void open(char **argv);
+void open_it(char **argv);
 void arguments(void);
 void invalid(char *instruct, unsigned int line);
 void malloc_it(void);
+void notint(unsigned int line);
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
-void swap(stack_t **stack, unsigned int line_number);
+void free_it(stack_t *stack);
+void swap_it(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void sub_it(stack_t **stack, unsigned int line_number);
+void mul_it(stack_t **stack, unsigned int line_number);
+void div_it(stack_t **stack, unsigned int line_number);
+
+void orx(char **arg);
+int is_number(char *token);
+int is_comment(char *token, int line_counter);
+
+char **parse(char *line);
+void (*get_op_code(char **tokens, unsigned int line))(stack_t **, unsigned int);
+int valid(char *token);
 
 #endif
